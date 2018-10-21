@@ -63,6 +63,21 @@
 						</div>
 						
 						<div class="layui-form-item">
+							<div class="layui-inline">
+								<label class="layui-form-label">出生年月</label>
+								<div class="layui-input-block">
+									<input type="text" class="layui-input" id="date"/>
+								</div>
+							</div>
+							<div class="layui-inline">
+								<label class="layui-form-label">结婚年月</label>
+								<div class="layui-input-block">
+									<input type="text" class="layui-input" id="date1"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="layui-form-item">
 							<div class="layui-input-block">
 								<input type="submit" class="layui-btn" value="马上提交"/>
 							</div>
@@ -164,7 +179,17 @@
 				//重新渲染表单
 				form.render();
 			});
-
+			layui.use('laydate', function(){
+			  var laydate = layui.laydate;
+			  
+			  //执行一个laydate实例
+			  laydate.render({
+			    elem: '#date'//指定元素
+			  });
+			  laydate.render({
+			    elem: '#date1'//指定元素
+			  });
+			});
 			layui.use('jquery', function() {
 				var $ = layui.$;
 				//演示动画
