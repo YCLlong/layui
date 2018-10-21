@@ -18,7 +18,8 @@
 	<body>
 		<div class="layui-tab">
 			<ul class="layui-tab-title">
-				<li class="layui-this">form表单</li>
+				<li class="layui-this">导航条</li>
+				<li>form表单</li>
 				<li>按钮</li>
 				<li>栅格布局</li>
 				<li>图标</li>
@@ -26,8 +27,71 @@
 			</ul>
 
 			<div class="layui-tab-content">
-				<!--form表单-->
+				<!--导航条，需要加载 element-->
 				<div class="layui-tab-item layui-show">
+					<ul class="layui-nav" lay-filter="">
+					  <li class="layui-nav-item"><a href="">最新活动</a></li>
+					  <li class="layui-nav-item layui-this"><a href="">产品</a></li>
+					  <li class="layui-nav-item"><a href="">大数据</a></li>
+					  <li class="layui-nav-item">
+					    <a href="javascript:;">解决方案</a>
+					    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+					      <dd><a href="">移动模块</a></dd>
+					      <dd><a href="">后台模版</a></dd>
+					      <dd><a href="">电商平台</a></dd>
+					    </dl>
+					  </li>
+					  <li class="layui-nav-item"><a href="">社区</a></li>
+					</ul>
+					
+					<div class="layui-row" style="margin-top: 50px;"></div>
+					
+					<ul class="layui-nav layui-bg-green">
+					  <li class="layui-nav-item">
+					    <a href="">控制台<span class="layui-badge">9</span></a>
+					  </li>
+					  <li class="layui-nav-item">
+					    <a href="">个人中心<span class="layui-badge-dot"></span></a>
+					  </li>
+					  <li class="layui-nav-item">
+					    <a href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+					    <dl class="layui-nav-child">
+					      <dd><a href="javascript:;">修改信息</a></dd>
+					      <dd><a href="javascript:;">安全管理</a></dd>
+					      <dd><a href="javascript:;">退了</a></dd>
+					    </dl>
+					  </li>
+					</ul>
+					
+					<div class="layui-row" style="margin-top: 50px;"></div>
+					
+					<ul class="layui-nav layui-nav-tree" lay-filter="test">
+					<!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+					  <li class="layui-nav-item layui-nav-itemed">
+					    <a href="javascript:;">默认展开</a>
+					    <dl class="layui-nav-child">
+					      <dd><a href="javascript:;">选项1</a></dd>
+					      <dd><a href="javascript:;">选项2</a></dd>
+					      <dd><a href="">跳转</a></dd>
+					    </dl>
+					  </li>
+					  <li class="layui-nav-item layui-nav-itemed">
+					    <a href="javascript:;">解决方案</a>
+					    <dl class="layui-nav-child">
+					      <dd><a href="">移动模块</a></dd>
+					      <dd><a href="">后台模版</a></dd>
+					      <dd><a href="">电商平台</a></dd>
+					    </dl>
+					  </li>
+					  <li class="layui-nav-item"><a href="">产品</a></li>
+					  <li class="layui-nav-item"><a href="">大数据</a></li>
+					</ul>
+				</div>
+					
+					
+					
+				<!--form表单-->
+				<div class="layui-tab-item">
 					<form action="#" class="layui-form">
 						<div class="layui-form-item">
 							<label class="layui-form-label">姓名</label>
@@ -174,6 +238,12 @@
 		</div>
 
 		<script>
+			//注意：导航 依赖 element 模块，否则无法进行功能性操作
+			layui.use('element', function(){
+			  var element = layui.element;
+			  element.init();
+			});
+						
 			layui.use('form', function() {
 				var form = layui.form;
 				//重新渲染表单
