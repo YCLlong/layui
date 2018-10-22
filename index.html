@@ -18,7 +18,14 @@
 	<body>
 		<div class="layui-tab">
 			<ul class="layui-tab-title">
-				<li class="layui-this">导航条</li>
+				<li class="layui-this">辅助线</li>
+				<li>时间线</li>
+				<li>徽章</li>
+				<li>表格</li>
+				<li>面板</li>
+				<li>进度条</li>
+				<li>tab选项卡</li>
+				<li>导航条</li>
 				<li>form表单</li>
 				<li>按钮</li>
 				<li>栅格布局</li>
@@ -27,94 +34,303 @@
 			</ul>
 
 			<div class="layui-tab-content">
-				<!--导航条，需要加载 element-->
+
+				<!--辅助线-->
 				<div class="layui-tab-item layui-show">
+					<blockquote class="layui-elem-quote">引用区域的文字1</blockquote>
+					<blockquote class="layui-elem-quote layui-quote-nm">引用区域的文字2</blockquote>
+
+					<fieldset class="layui-elem-field">
+						<legend>字段集区块 - 默认风格</legend>
+						<div class="layui-field-box">
+							内容区域
+						</div>
+					</fieldset>
+
+					<!--有标题的横线-->
+					<fieldset class="layui-elem-field layui-field-title">
+						<legend>字段集区块 - 横线风格</legend>
+						<div class="layui-field-box">
+							内容区域
+						</div>
+					</fieldset>
+				</div>
+
+				<!--时间线-->
+				<div class="layui-tab-item">
+					<ul class="layui-timeline">
+						<li class="layui-timeline-item">
+							<i class="layui-icon layui-icon-cart"></i>
+							<div class="layui-timeline-content layui-text">
+								<h3 class="layui-timeline-title">8月18日</h3>
+								<p>
+									layui 2.0 的一切准备工作似乎都已到位。发布之弦，一触即发。
+									<br>不枉近百个日日夜夜与之为伴。因小而大，因弱而强。
+									<br>无论它能走多远，抑或如何支撑？至少我曾倾注全心，无怨无悔 <i class="layui-icon"></i>
+								</p>
+							</div>
+						</li>
+						<li class="layui-timeline-item">
+							<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+							<div class="layui-timeline-content layui-text">
+								<h3 class="layui-timeline-title">8月16日</h3>
+								<p>杜甫的思想核心是儒家的仁政思想，他有“<em>致君尧舜上，再使风俗淳</em>”的宏伟抱负。个人最爱的名篇有：</p>
+								<ul>
+									<li>《登高》</li>
+									<li>《茅屋为秋风所破歌》</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+
+				<!--徽章-->
+				<div class="layui-tab-item">
+					<span class="layui-badge-dot layui-bg-red"></span>
+					<span class="layui-badge layui-bg-green">2</span>
+					<span class="layui-badge-rim">6</span>
+
+					<!--徽章一般加到按钮里什么的-->
+					<button class="layui-btn">查看消息<span class="layui-badge layui-bg-gray">1</span></button>
+					<button class="layui-btn">动态<span class="layui-badge-dot layui-bg-orange"></span></button>
+				</div>
+
+				<!--表格-->
+				<div class="layui-tab-item ">
+					<table class="layui-table" lay-skin='line' lay-size='sm'>
+						<!--这个是调整宽度的-->
+						<colgroup>
+							<col width="150">
+							<col width="200">
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th>昵称</th>
+								<th>加入时间</th>
+								<th>签名</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>贤心</td>
+								<td>2016-11-29</td>
+								<td>人生就像是一场修行</td>
+							</tr>
+							<tr>
+								<td>许闲心</td>
+								<td>2016-11-28</td>
+								<td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!--面板-->
+				<div class="layui-tab-item">
+					<div class="layui-card">
+						<div class="layui-card-header">卡片面板</div>
+						<div class="layui-card-body">
+							卡片式面板面板通常用于非白色背景色的主体内<br> 从而映衬出边框投影
+						</div>
+					</div>
+
+					<div class="layui-card">
+						<div class="layui-card-body layui-bg-cyan">
+							卡片式面板面板通常用于非白色背景色的主体内<br> 从而映衬出边框投影
+						</div>
+					</div>
+
+					<div class="layui-collapse">
+						<div class="layui-colla-item">
+							<h2 class="layui-colla-title">杜甫</h2>
+							<div class="layui-colla-content">默认收缩</div>
+						</div>
+						<div class="layui-colla-item">
+							<h2 class="layui-colla-title">李清照</h2>
+							<div class="layui-colla-content layui-show">展开</div>
+						</div>
+					</div>
+
+					<div class="layui-collapse" lay-accordion>
+						<div class="layui-colla-item">
+							<h2 class="layui-colla-title">杜甫</h2>
+							<div class="layui-colla-content layui-show">内容区域</div>
+						</div>
+						<div class="layui-colla-item">
+							<h2 class="layui-colla-title">李清照</h2>
+							<div class="layui-colla-content layui-show">内容区域</div>
+						</div>
+						<div class="layui-colla-item">
+							<h2 class="layui-colla-title">鲁迅</h2>
+							<div class="layui-colla-content layui-show">内容区域</div>
+						</div>
+					</div>
+				</div>
+
+				<!--进度条-->
+				<div class="layui-tab-item">
+					<div class="layui-progress" lay-showPercent="true" lay-filter='ycl'>
+						<div id='pro1' class="layui-progress-bar layui-bg-red" lay-percent="1/3"></div>
+					</div>
+
+					<div class="layui-progress" lay-showPercent="yes">
+						<div class="layui-progress-bar layui-bg-red" lay-percent="30%"></div>
+					</div>
+
+					<div class="layui-progress layui-progress-big" lay-showPercent="yes">
+						<div class="layui-progress-bar layui-bg-green" lay-percent="50%"></div>
+					</div>
+				</div>
+
+				<!--tab选项卡-->
+				<div class="layui-tab-item">
+
+					<div class="layui-tab" lay-allowClose="true" lay-filter="test1">
+						<ul class="layui-tab-title">
+							<li lay-id='11' class="layui-this">选项卡1</li>
+							<li lay-id='12'>选项卡2</li>
+							<li lay-id='13'>选项卡3</li>
+						</ul>
+						<div class="layui-tab-content">
+							<div class="layui-tab-item layui-show">
+								内容1
+							</div>
+							<div class="layui-tab-item">
+								内容2
+							</div>
+							<div class="layui-tab-item">
+								内容3
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!--导航条，需要加载 element-->
+				<div class="layui-tab-item">
 					<ul class="layui-nav" lay-filter="">
-					  <li class="layui-nav-item"><a href="">最新活动</a></li>
-					  <li class="layui-nav-item layui-this"><a href="">产品</a></li>
-					  <li class="layui-nav-item"><a href="">大数据</a></li>
-					  <li class="layui-nav-item">
-					    <a href="javascript:;">解决方案</a>
-					    <dl class="layui-nav-child"> <!-- 二级菜单 -->
-					      <dd><a href="">移动模块</a></dd>
-					      <dd><a href="">后台模版</a></dd>
-					      <dd><a href="">电商平台</a></dd>
-					    </dl>
-					  </li>
-					  <li class="layui-nav-item"><a href="">社区</a></li>
+						<li class="layui-nav-item">
+							<a href="">最新活动</a>
+						</li>
+						<li class="layui-nav-item layui-this">
+							<a href="">产品</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="">大数据</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">解决方案</a>
+							<dl class="layui-nav-child">
+								<!-- 二级菜单 -->
+								<dd>
+									<a href="">移动模块</a>
+								</dd>
+								<dd>
+									<a href="">后台模版</a>
+								</dd>
+								<dd>
+									<a href="">电商平台</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="">社区</a>
+						</li>
 					</ul>
-					
+
 					<div class="layui-row" style="margin-top: 50px;"></div>
-					
+
 					<ul class="layui-nav layui-bg-green">
-					  <li class="layui-nav-item">
-					    <a href="">控制台<span class="layui-badge">9</span></a>
-					  </li>
-					  <li class="layui-nav-item">
-					    <a href="">个人中心<span class="layui-badge-dot"></span></a>
-					  </li>
-					  <li class="layui-nav-item">
-					    <a href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
-					    <dl class="layui-nav-child">
-					      <dd><a href="javascript:;">修改信息</a></dd>
-					      <dd><a href="javascript:;">安全管理</a></dd>
-					      <dd><a href="javascript:;">退了</a></dd>
-					    </dl>
-					  </li>
+						<li class="layui-nav-item">
+							<a href="">控制台<span class="layui-badge">9</span></a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="">个人中心<span class="layui-badge-dot"></span></a>
+						</li>
+						<li class="layui-nav-item">
+							<a href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">修改信息</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">安全管理</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">退了</a>
+								</dd>
+							</dl>
+						</li>
 					</ul>
-					
+
 					<div class="layui-row" style="margin-top: 50px;"></div>
-					
+
 					<ul class="layui-nav layui-nav-tree" lay-filter="test">
-					<!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
-					  <li class="layui-nav-item layui-nav-itemed">
-					    <a href="javascript:;">默认展开</a>
-					    <dl class="layui-nav-child">
-					      <dd><a href="javascript:;">选项1</a></dd>
-					      <dd><a href="javascript:;">选项2</a></dd>
-					      <dd><a href="">跳转</a></dd>
-					    </dl>
-					  </li>
-					  <li class="layui-nav-item layui-nav-itemed">
-					    <a href="javascript:;">解决方案</a>
-					    <dl class="layui-nav-child">
-					      <dd><a href="">移动模块</a></dd>
-					      <dd><a href="">后台模版</a></dd>
-					      <dd><a href="">电商平台</a></dd>
-					    </dl>
-					  </li>
-					  <li class="layui-nav-item"><a href="">产品</a></li>
-					  <li class="layui-nav-item"><a href="">大数据</a></li>
+						<!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+						<li class="layui-nav-item layui-nav-itemed">
+							<a href="javascript:;">默认展开</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">选项1</a>
+								</dd>
+								<dd>
+									<a href="javascript:;">选项2</a>
+								</dd>
+								<dd>
+									<a href="">跳转</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item layui-nav-itemed">
+							<a href="javascript:;">解决方案</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="">移动模块</a>
+								</dd>
+								<dd>
+									<a href="">后台模版</a>
+								</dd>
+								<dd>
+									<a href="">电商平台</a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="">产品</a>
+						</li>
+						<li class="layui-nav-item">
+							<a href="">大数据</a>
+						</li>
 					</ul>
 				</div>
-					
-					
-					
+
 				<!--form表单-->
 				<div class="layui-tab-item">
 					<form action="#" class="layui-form">
 						<div class="layui-form-item">
 							<label class="layui-form-label">姓名</label>
 							<div class="layui-input-block">
-								<input class="layui-input" required type="text" name='userName' autocomplete="off" placeholder='请输入姓名'/>
+								<input class="layui-input" required type="text" name='userName' autocomplete="off" placeholder='请输入姓名' />
 							</div>
 						</div>
-						
+
 						<div class="layui-form-item">
 							<label class="layui-form-label">性别</label>
 							<div class="layui-input-block">
-								<input type="radio" name='sex' title="男" value="nan" lay-skin="primary"/>
-								<input type="radio" name='sex' title="女" value="nv" lay-skin="primary"/>
+								<input type="radio" name='sex' title="男" value="nan" lay-skin="primary" />
+								<input type="radio" name='sex' title="女" value="nv" lay-skin="primary" />
 							</div>
 						</div>
-						
+
 						<div class="layui-form-item">
 							<label class="layui-form-label">推送短信</label>
 							<div class="layui-input-block">
-								<input type="checkbox" name='push' lay-skin="switch" lay-text="开启|关闭"/>
+								<input type="checkbox" name='push' lay-skin="switch" lay-text="开启|关闭" />
 							</div>
 						</div>
-						
+
 						<div class="layui-form-item">
 							<label class="layui-form-label">爱好</label>
 							<div class="layui-input-block">
@@ -125,25 +341,25 @@
 								</select>
 							</div>
 						</div>
-						
+
 						<div class="layui-form-item">
 							<div class="layui-inline">
 								<label class="layui-form-label">出生年月</label>
 								<div class="layui-input-block">
-									<input type="text" class="layui-input" id="date"/>
+									<input type="text" class="layui-input" id="date" />
 								</div>
 							</div>
 							<div class="layui-inline">
 								<label class="layui-form-label">结婚年月</label>
 								<div class="layui-input-block">
-									<input type="text" class="layui-input" id="date1"/>
+									<input type="text" class="layui-input" id="date1" />
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="layui-form-item">
 							<div class="layui-input-block">
-								<input type="submit" class="layui-btn" value="马上提交"/>
+								<input type="submit" class="layui-btn" value="马上提交" />
 							</div>
 						</div>
 					</form>
@@ -238,27 +454,34 @@
 		</div>
 
 		<script>
+			var i = 1;
 			//注意：导航 依赖 element 模块，否则无法进行功能性操作
-			layui.use('element', function(){
-			  var element = layui.element;
-			  element.init();
+			layui.use('element', function() {
+				var element = layui.element;
+				element.init();
+				element.on('tab(test1)', function() {
+					var tabId = this.getAttribute('lay-id');
+				});
+
+				var timer = setInterval("layui.element.progress('ycl',i+=1);", 100);
+
 			});
-						
+
 			layui.use('form', function() {
 				var form = layui.form;
 				//重新渲染表单
 				form.render();
 			});
-			layui.use('laydate', function(){
-			  var laydate = layui.laydate;
-			  
-			  //执行一个laydate实例
-			  laydate.render({
-			    elem: '#date'//指定元素
-			  });
-			  laydate.render({
-			    elem: '#date1'//指定元素
-			  });
+			layui.use('laydate', function() {
+				var laydate = layui.laydate;
+
+				//执行一个laydate实例
+				laydate.render({
+					elem: '#date' //指定元素
+				});
+				laydate.render({
+					elem: '#date1' //指定元素
+				});
 			});
 			layui.use('jquery', function() {
 				var $ = layui.$;
@@ -285,6 +508,9 @@
 					console.log("执行完毕");
 				});
 			});
+		</script>
+
+		<script>
 		</script>
 	</body>
 
