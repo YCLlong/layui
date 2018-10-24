@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/layui.css" />
+		<script src="js/jquery-3.2.1.js"></script>
+		<script src="layui.all.js"></script>
+		<title>layer弹出层</title>
+	</head>
+
+	<body>
+		<div class="layui-tab layui-tab-brief">
+			<ul class="layui-tab-title">
+				<li class="layui-this">基本用法</li>
+				<li>用法</li>
+			</ul>
+			<div class="layui-tab-content">
+				<div class="layui-tab-item layui-show">
+					<table class="layui-table" lay-skin='col'>
+						<colgroup>
+							<col width="300" />
+							<col width="500" />
+							<col />
+						</colgroup>
+						<thead>
+							<tr>
+								<th>说明</th>
+								<th>代码</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>弹出一个消息</td>
+								<td><pre class="layui-code">layer.msg("显示的内容")</pre></td>
+								<td>
+									<div class="layui-btn layui-btn-radius" onclick="msg()">点我弹出一个消息</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>弹出一个界面，可以定义宽高，标题等，内容自定义</td>
+								<td>
+									<pre class="layui-code">
+										function showPage(){
+											layer.open({
+												type:1,//这个参数搞不清楚
+												title: '标题标题',
+												area:['600px','400px'],//宽高
+												//maxmin:true, 设置最大化最小化
+												shadeClose: true,//点击关闭遮罩层
+												content:'<div class ="layui-elem-quote">111</div>'
+												//content:'index.html'  可以加载一个网页
+											});
+										}
+									</pre>
+								</td>
+								<td>
+									<div class="layui-btn layui-btn-radius" onclick="showPage()">点我弹出一个界面</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>弹出一个loading层</td>
+								<td>
+									<pre class="layui-code">
+										function showLoading(){
+											var h = layer.load();
+											//这里写逻辑，比如调用后台接口数据
+											
+											setTimeout(function(){
+												layer.close(h);	
+											},2000);
+										}
+									</pre>
+								</td>
+								<td>
+									<div class="layui-btn layui-btn-primary" onclick="showLoading()">点我弹出一个loading层</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>弹出一个tip层，可以绑定具体的元素弹出</td>
+								<td>
+									<pre class="layui-code">
+										function tip(){
+											layer.tips("tip显示的内容",'#tip');
+										}
+									</pre>
+								</td>
+								<td>
+									<div id='tip' class="layui-btn layui-btn-danger" onclick="tip()">点击弹出tips层</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="layui-tab-item">内容2</div>
+			</div>
+		</div>
+
+		<script>
+			layui.code({
+				encode: true //是否转义html标签。默认不开启
+			});
+			layui.use('element', function() {
+				var element = layui.element;
+			});
+
+			function msg() {
+				layer.msg('消息提示');
+			}
+
+			function showPage() {
+				layer.open({
+					type: 1, //这个参数搞不清楚
+					title: '标题标题',
+					area: ['60px', '400px'], //宽高
+					//maxmin:true, 设置最大化最小化
+					shadeClose: true, //点击关闭遮罩层
+					content: '<div class ="layui-elem-quote">111</div>'
+					//content:'index.html'  可以加载一个网页
+				});
+			}
+
+			function showLoading() {
+				var h = layer.load();
+				//这里写逻辑，比如调用后台接口数据
+
+				setTimeout(function() {
+					layer.close(h);
+				}, 2000);
+			}
+
+			function tip() {
+				layer.tips("tip显示的内容", '#tip');
+			}
+		</script>
+
+	</body>
+
+</html>
